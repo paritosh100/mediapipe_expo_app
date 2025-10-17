@@ -1,0 +1,113 @@
+# =========================================
+# React Native / Node
+# =========================================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+*.log
+*.tmp
+*.temp
+
+# Metro bundler cache
+.expo/
+.expo-shared/
+.bundle/
+dist/
+.tmp/
+
+# React Native build artifacts
+android/.gradle/
+android/app/build/
+android/build/
+android/local.properties
+android/.cxx/
+android/.idea/
+android/.settings/
+android/.externalNativeBuild/
+android/gradlew
+android/gradlew.bat
+android/gradle/
+android/gradlew*
+android/gradle-wrapper.jar
+
+# iOS build artifacts
+ios/Pods/
+ios/build/
+ios/DerivedData/
+ios/.idea/
+ios/.xcworkspace/
+ios/*.xcuserdata
+ios/*.xcuserdatad
+ios/*.mode1v3
+ios/*.mode2v3
+ios/*.perspectivev3
+ios/*.xccheckout
+ios/*.moved-aside
+ios/*.pbxuser
+ios/*.mode*
+
+# =========================================
+# System files
+# =========================================
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Icon?
+*.swp
+*.swo
+*.orig
+*.bak
+
+# =========================================
+# VS Code / Editor
+# =========================================
+.vscode/
+.idea/
+*.iml
+
+# =========================================
+# Environment / Credentials
+# =========================================
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+.env.*.local
+
+# =========================================
+# Testing / Coverage
+# =========================================
+coverage/
+.nyc_output/
+jest/
+__tests__/
+*.spec.js
+*.test.js
+
+# =========================================
+# Misc / Temporary
+# =========================================
+*.keystore
+*.jks
+*.p12
+*.pem
+*.crt
+*.key
+*.mobileprovision
+*.ipa
+*.apk
+*.aab
+
+# =========================================
+# macOS / Windows specific
+# =========================================
+*.lnk
+*.exe
+*.bat
+*.cmd
+*.ps1
+desktop.ini
+$RECYCLE.BIN/

@@ -1,0 +1,61 @@
+# Fastfile for Pose Correction App
+
+default_platform(:android)
+
+platform :android do
+  desc "Deploy to Google Play Store"
+  lane :deploy do
+    # Build the app
+    gradle(
+      task: "bundle",
+      build_type: "Release",
+      project_dir: "android/"
+    )
+    
+    # Upload to Play Store
+    upload_to_play_store(
+      track: 'internal',
+      aab: 'android/app/build/outputs/bundle/release/app-release.aab',
+      skip_upload_metadata: false,
+      skip_upload_images: false,
+      skip_upload_screenshots: false
+    )
+  end
+
+  desc "Build release APK"
+  lane :build_release do
+    gradle(
+      task: "assemble",
+      build_type: "Release",
+      project_dir: "android/"
+    )
+  end
+end
+
+platform :ios do
+  desc "Deploy to Apple App Store"
+  lane :deploy do
+    # Build the app
+    build_app(
+      workspace: "ios/PoseCorrectionApp.xcworkspace",
+      scheme: "PoseCorrectionApp",
+      export_method: "app-store"
+    )
+    
+    # Upload to App Store
+    upload_to_app_store(
+      skip_metadata: false,
+      skip_screenshots: false,
+      force: true
+    )
+  end
+
+  desc "Build release IPA"
+  lane :build_release do
+    build_app(
+      workspace: "ios/PoseCorrectionApp.xcworkspace",
+      scheme: "PoseCorrectionApp",
+      export_method: "app-store"
+    )
+  end
+end
